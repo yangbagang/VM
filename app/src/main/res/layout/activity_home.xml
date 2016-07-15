@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_white"
+    android:orientation="vertical">
+
+    <!-- 广告位1============================ -->
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/shopping"
+        android:visibility="visible"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="100%">
+
+        <LinearLayout
+            android:id="@+id/home_ll_place01"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/home_iv_logo_click"
+                android:layout_width="200dp"
+                android:layout_height="100dp"
+                android:src="@null" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_a" />
+
+    </FrameLayout>
+
+    <!-- 广告位 2==================== -->
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:id="@+id/home_ll_place02"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/shopping_guide"
+        android:orientation="horizontal"
+        app:layout_heightPercent="30%"
+        app:layout_marginBottomPercent="1%"
+        app:layout_marginTopPercent="1%"
+        app:layout_widthPercent="100%">
+
+        <ImageView
+            android:id="@+id/shopping_iv_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/icon_b" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+
+    <!--    购物车与键盘布局================== -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_heightPercent="38%"
+        app:layout_widthPercent="100%">
+
+
+        <!-- 购物车-->
+        <LinearLayout
+            android:id="@+id/home_ll_shopping_cart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/green_light_bg"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_shopping" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:gravity="center"
+                android:text="购物车"
+                android:textColor="@color/white"
+                android:textSize="60sp" />
+        </LinearLayout>
+
+        <!--输入框-->
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/home_edit_trackNum"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/border_round_white"
+                android:cursorVisible="false"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:hint="请输入商品编号购买"
+                android:inputType="number"
+                android:maxLength="3"
+                android:paddingLeft="10dp"
+                android:textColor="@color/default_text"
+                android:textColorHint="@color/default_text"
+                app:layout_textSizePercent="5%"
+                app:layout_heightPercent="13%"
+                app:layout_marginLeftPercent="5%"
+                app:layout_widthPercent="90%" />
+
+            <TextView
+                android:id="@+id/home_tv_input"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:textColor="@color/default_text"
+                android:textSize="@dimen/default_text_24"
+                app:layout_heightPercent="7%"
+                app:layout_marginLeftPercent="5%"
+                app:layout_widthPercent="90%" />
+
+            <!--数字输入-->
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="20%"
+                app:layout_marginLeftPercent="8%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:id="@+id/home_bt_num_01"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_num_02"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="2"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_num_03"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="3"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_widthPercent="85%h" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="20%"
+                app:layout_marginLeftPercent="8%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:id="@+id/home_bt_num_04"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="4"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_num_05"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="5"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_num_06"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="6"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_widthPercent="85%h" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="20%"
+                app:layout_marginLeftPercent="8%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:id="@+id/home_bt_num_07"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_num_08"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="8"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_num_09"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="9"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_widthPercent="85%h" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="20%"
+                app:layout_marginLeftPercent="8%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:id="@+id/home_bt_deleteAll"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="清除"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="20%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_num_0"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="28%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_marginRightPercent="10%"
+                    app:layout_widthPercent="85%h" />
+
+                <TextView
+                    android:id="@+id/home_bt_delete"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@drawable/selector_bt_num"
+                    android:gravity="center"
+                    android:text="回退"
+                    android:textColor="@color/default_text"
+                    app:layout_textSizePercent="20%"
+                    app:layout_heightPercent="85%h"
+                    app:layout_widthPercent="85%h" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+    </LinearLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

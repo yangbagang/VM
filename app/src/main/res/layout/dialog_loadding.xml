@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:attr="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_gravity="center"
+              android:gravity="center"
+              android:orientation="vertical">
+
+    <!--android:background="@mipmap/icon_bg"-->
+
+
+    <com.cnpay.tigerbalm.view.gif.PowerImageView
+        android:id="@+id/gif_iv_erweima"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:src="@mipmap/loadding"
+        attr:auto_play="true"/>
+
+
+</LinearLayout>

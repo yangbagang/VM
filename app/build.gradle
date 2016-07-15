@@ -1,0 +1,63 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    //修改生成的apk名字
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def oldFile = output.outputFile
+            if (variant.buildType.name.equals('release')) {
+//                println(variant.productFlavors[1].name) // '-' + variant.productFlavors[0].name + (渠道)
+                def releaseApkName = 'VM-' + defaultConfig.versionName + '.apk'
+                output.outputFile = new File(oldFile.parent, releaseApkName)
+            }
+            if (variant.buildType.name.equals('beta')) {
+                def betaName = oldFile.name.replace(".apk", "-v" + "-build.apk")
+                output.outputFile = new File(oldFile.parent, betaName)
+            }
+            if (variant.buildType.name.equals('debug')) {
+            }
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.ybg.rp.vm"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+
+        //个推推送配置
+        manifestPlaceholders = [
+                GETUI_APP_ID    : "OEXALff5C3AroKRVWrd3P9",
+                GETUI_APP_KEY   : "Gai7NCeLXr9URULk4zsjE",
+                GETUI_APP_SECRET: "QKW5aw45bb5KRyXDaByrKA",
+                PACKAGE_NAME    : applicationId
+        ]
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+
+    compile 'de.mindpipe.android:android-logging-log4j:1.0.3'
+    compile 'log4j:log4j:1.2.17'
+    compile 'com.getui:sdk:2.7.0.0'
+    compile 'com.getui:ext:2.0.3'
+
+    compile files('libs/new_dwinserail.jar')
+    compile files('libs/zxing.jar')
+    //compile project(':TigerBalm')
+    compile 'com.cnpay:TigerBalm:1.0.1'
+    compile 'com.zhy:percent-support-extends:1.1.1'
+}

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_marginTop="@dimen/dp_500"
+        android:src="@mipmap/icon_scan_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        android:layout_marginTop="@dimen/dp_30"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textColor="@color/white"
+            android:textSize="@dimen/default_text_35"
+            android:text="扫描成功！"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <TextView
+        android:textColor="@color/white"
+        android:layout_marginTop="@dimen/dp_50"
+        android:layout_gravity="center"
+        android:textSize="40sp"
+        android:text="请在手机上确认登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/scanSuccess_tv_back"
+        android:textColor="@color/lightgreen"
+        android:textSize="@dimen/default_text_28"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_gravity="center"
+        android:text="返回扫二维码登录"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+</LinearLayout>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="28%"
+        app:layout_widthPercent="96%"
+        app:layout_marginTopPercent="1%"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/border_round_green_dark"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/trackTest_ll_test_main"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="25%"
+            app:layout_widthPercent="100%"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_25"
+                android:text="主机测试"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="@dimen/dp_20"
+                android:src="@mipmap/icon_arrow_enter" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@color/default_line_view" />
+
+        <GridView
+            android:id="@+id/trackTest_gv_main_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="35%"
+            app:layout_widthPercent="100%"
+            app:layout_marginTopPercent="4%"
+            android:horizontalSpacing="@dimen/dp_08"
+            android:listSelector="@color/transparent"
+            android:numColumns="5"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/dp_05" />
+
+        <Button
+            android:id="@+id/trackTest_bt_main_all"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="23%"
+            app:layout_widthPercent="90%"
+            app:layout_marginPercent="4%"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/border_round_green_white"
+            android:gravity="center"
+            android:text="测试全部主机货道"
+            android:textColor="@color/default_text_white"
+            android:textSize="@dimen/default_text_25" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="28%"
+        app:layout_widthPercent="96%"
+        app:layout_marginTopPercent="1%"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/border_round_green_dark"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/trackTest_ll_test_cabinet"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="25%"
+            app:layout_widthPercent="100%"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_25"
+                android:text="格子柜测试"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_24" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingRight="@dimen/dp_20"
+                android:src="@mipmap/icon_arrow_enter" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@color/default_line_view" />
+
+        <GridView
+            android:id="@+id/trackTest_gv_cabinet_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="35%"
+            app:layout_widthPercent="100%"
+            app:layout_marginTopPercent="4%"
+            android:horizontalSpacing="@dimen/dp_08"
+            android:listSelector="@color/transparent"
+            android:numColumns="5"
+            android:scrollbars="none"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="@dimen/dp_05" />
+
+        <Button
+            android:id="@+id/trackTest_bt_cabinet_all"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_heightPercent="23%"
+            app:layout_widthPercent="90%"
+            app:layout_marginPercent="4%"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/border_round_green_white"
+            android:gravity="center"
+            android:text="测试全部格子柜"
+            android:textColor="@color/default_text_white"
+            android:textSize="@dimen/default_text_25" />
+    </com.zhy.android.percent.support.PercentLinearLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="5%"
+        app:layout_widthPercent="96%"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/dp_25"
+        android:text="测试结果:"
+        android:textColor="@color/default_text_white"
+        android:textSize="@dimen/default_text_30" />
+
+    <ListView
+        android:id="@+id/trackTest_lv_track_test"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_heightPercent="30%"
+        app:layout_widthPercent="96%"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/green_dark"
+        android:divider="@color/transparent"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" />
+</com.zhy.android.percent.support.PercentLinearLayout>

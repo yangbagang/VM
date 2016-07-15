@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_90"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_maxSet_tv_layer"
+            android:layout_width="@dimen/dp_90"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/dp_20"
+            android:text="101"
+            android:textColor="@color/default_text_white"
+            android:textSize="@dimen/default_text_24"
+            android:textStyle="bold" />
+
+       <TextView
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:paddingRight="@dimen/dp_15"
+           android:gravity="center_vertical|right"
+           android:text="最大排放量"
+           android:textColor="@color/default_text_white"
+           android:textSize="@dimen/default_text_25"
+           android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/item_maxSet_tv_num"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:text="15"
+            android:textColor="@color/default_text_white"
+            android:textSize="@dimen/default_text_24"
+            android:textStyle="bold"/>
+    </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/default_line_view"/>
+</LinearLayout>

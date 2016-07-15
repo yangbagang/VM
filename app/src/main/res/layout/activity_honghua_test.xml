@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:background="#829797"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <TextView
+        android:background="@color/colorPrimary"
+        android:textSize="@dimen/default_text_16"
+        android:text="测试size, 字体大小,16  或者30"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_40"/>
+
+</LinearLayout>

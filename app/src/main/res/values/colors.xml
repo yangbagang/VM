@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_popup">#00111111</color>
+    <color name="background">#F5EFF5</color>
+    <color name="background_white">#FFFFFF</color>
+
+    <color name="default_line_view">#FFFFFF</color><!--#f2f2f2 #AAAAAA-->
+    <color name="default_line_dark">#dedede</color><!--#dedede-->
+    <color name="default_line_border">#888888</color>
+
+    <color name="default_text">#FF505050</color>
+    <color name="default_text_dark">#999999</color>
+    <color name="default_text_deep">#333333</color>
+    <color name="default_text_white">#FFFFFF</color>
+    <color name="default_text_blue">#0092FF</color>
+    <color name="default_text_green">#23CD77</color>
+    <color name="default_text_yellow">#FFFC00</color>
+    <color name="default_text_red">#FC4747</color>
+
+    <color name="green_bg">#2D4A28</color>
+    <color name="green_light_bg">#7FC602</color>
+    <color name="green_dark">#4B6E39</color>
+    <color name="green_transparent">#0016A560</color>
+    <color name="green_btn">#23CD77</color>
+    <color name="green_btn_light">#B1FE00</color>
+
+    <color name="dui_jiang">#7EC617</color>
+    <color name="shopping_guide">#43CDC6</color>
+    <color name="shopping">#FFA330</color>
+    <color name="rb_check">#A2E91D</color>
+    <color name="pop_cart">#061C06</color>
+    <color name="pop_green">#699146</color>
+
+    <color name="product_list_bac">#efeef4</color>
+    <color name="keyboard_blackground">#bababa</color>
+    <color name="black">#000</color>
+    <color name="color_3c3c3c">#3c3c3c</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_1a98ff">#1a98ff</color>
+    <color name="color_d8dbdf">#d8dbdf</color>
+
+    <color name="app_style">#03233b</color>
+    <color name="txt_orange">#ff6800</color>
+</resources>

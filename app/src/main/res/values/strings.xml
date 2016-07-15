@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">售卖机</string>
+    <string name="manage_info">  此部分功能请谨慎操作,请严格按照《操作手册》执行操作,操作错误将导致系统出错,无法正常营业。</string>
+</resources>

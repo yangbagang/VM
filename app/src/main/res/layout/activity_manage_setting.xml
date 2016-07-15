@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <com.zhy.android.percent.support.PercentLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <!--第一部分-->
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/border_round_green_dark"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_25"
+            android:paddingRight="@dimen/dp_25"
+            app:layout_heightPercent="5%"
+            app:layout_widthPercent="100%">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="货道状态:"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_32"
+                app:layout_heightPercent="100%"
+                app:layout_widthPercent="15%" />
+
+            <TextView
+                android:id="@+id/manage_tv_trackState"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center_vertical"
+                android:text="良好"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_32"
+                app:layout_heightPercent="100%"
+                app:layout_widthPercent="70%" />
+
+            <CheckBox
+                android:id="@+id/manage_cb_selectAll"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="全选"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_30"
+                app:layout_heightPercent="100%"
+                app:layout_widthPercent="15%" />
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+
+        <!--第二部分-->
+        <LinearLayout
+            android:id="@+id/manage_ll_error_track"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border_round_green_dark"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/dp_25"
+            android:paddingRight="@dimen/dp_25">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="@dimen/dp_05"
+                android:text="故障轨道:"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_30" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:minHeight="@dimen/dp_200"
+                android:orientation="vertical">
+
+                <GridView
+                    android:id="@+id/manage_gv_track"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:horizontalSpacing="@dimen/dp_05"
+                    android:listSelector="@color/transparent"
+                    android:numColumns="6"
+                    android:scrollbars="none"
+                    android:stretchMode="columnWidth"
+                    android:verticalSpacing="@dimen/dp_05" />
+
+                <com.zhy.android.percent.support.PercentLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_90"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="@dimen/dp_05"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/manage_bt_testTrack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_round_green_white"
+                        android:gravity="center"
+                        android:text="测试货道"
+                        android:textColor="@color/default_text_white"
+                        android:textSize="@dimen/default_text_30"
+                        app:layout_heightPercent="75%"
+                        app:layout_widthPercent="40%" />
+
+                    <Button
+                        android:id="@+id/manage_bt_fixTrack"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:layout_gravity="center_vertical"
+                        android:background="@drawable/border_round_green_white"
+                        android:gravity="center"
+                        android:text="修复货道"
+                        android:textColor="@color/default_text_white"
+                        android:textSize="@dimen/default_text_30"
+                        app:layout_heightPercent="75%"
+                        app:layout_marginLeftPercent="4%"
+                        app:layout_widthPercent="40%" />
+                </com.zhy.android.percent.support.PercentLinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--修复结果-->
+        <LinearLayout
+            android:id="@+id/manage_ll_operate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/border_round_green_dark"
+            android:minHeight="@dimen/dp_200"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/manage_tv_operate"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_70"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_25"
+                android:text="修复结果"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_30" />
+
+            <TextView
+                android:id="@+id/manage_tv_operateInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text=""
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_30" />
+        </LinearLayout>
+
+        <!--第三部分-->
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/dp_20"
+            android:background="@drawable/border_round_green_dark"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_25"
+            android:paddingRight="@dimen/dp_25"
+            app:layout_heightPercent="20%"
+            app:layout_widthPercent="100%">
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/manage_ll_salesdata"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="32%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="销售状态:"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_32" />
+
+                <TextView
+                    android:id="@+id/manage_tv_shellState"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_25"
+                    android:text="良好"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_32" />
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="今日销售额:"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_25" />
+
+                <TextView
+                    android:id="@+id/manage_tv_shellMoney"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="@dimen/dp_10"
+                    android:singleLine="true"
+                    android:text="￥13890.00"
+                    android:textColor="@color/default_text_yellow"
+                    android:textSize="@dimen/default_text_32" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_arrow_enter" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/default_line_view" />
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/manage_ll_trackTest"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="32%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="轨道测试"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_32" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_arrow_enter" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/default_line_view" />
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/manage_ll_log"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="32%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="操作日志"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_32" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_arrow_enter" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+
+        <!--第四部分-->
+        <com.zhy.android.percent.support.PercentLinearLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/border_round_green_dark"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/dp_25"
+            android:paddingRight="@dimen/dp_25"
+            app:layout_heightPercent="30%"
+            app:layout_marginTopPercent="1%"
+            app:layout_widthPercent="100%">
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/manage_ll_baseSet"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="24%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="基础设置"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_32" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_arrow_enter" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/default_line_view" />
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/manage_ll_paySelect"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="24%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="支付方式"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_32" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_arrow_enter" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/default_line_view" />
+
+            <com.zhy.android.percent.support.PercentLinearLayout
+                android:id="@+id/manage_ll_machineSelect"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_heightPercent="24%"
+                app:layout_widthPercent="100%">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:text="设备品牌"
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_32" />
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:src="@mipmap/icon_arrow_enter" />
+            </com.zhy.android.percent.support.PercentLinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/default_line_view" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_gravity="center_horizontal"
+                android:gravity="left"
+                android:text="@string/manage_info"
+                android:textColor="@color/default_text_white"
+                android:textSize="@dimen/default_text_25"
+                app:layout_heightPercent="25%"
+                app:layout_marginTopPercent="5%"
+                app:layout_widthPercent="90%" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_70"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="售后服务电话："
+                    android:textColor="@color/default_text_white"
+                    android:textSize="@dimen/default_text_25" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="400-880-8382"
+                    android:textColor="@color/default_text_yellow"
+                    android:textSize="@dimen/default_text_30" />
+
+            </LinearLayout>
+
+        </com.zhy.android.percent.support.PercentLinearLayout>
+
+        <Button
+            android:id="@+id/manage_btn_setting"
+            android:layout_width="200dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/border_round_green_dark"
+            android:text="设置"
+            android:textSize="@dimen/default_text_30" />
+
+    </com.zhy.android.percent.support.PercentLinearLayout>
+</ScrollView>

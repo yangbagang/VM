@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.android.percent.support.PercentLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bg"
+    android:orientation="vertical">
+
+    <!-- 商品大类数据=====================================-->
+    <com.cnpay.tigerbalm.view.list.AutoLoadRecyclerView
+        android:id="@+id/shopping_recycler_view_big"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_200"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_30"
+        android:visibility="visible"
+        app:layout_heightPercent="10%h"/>
+
+    <!-- 大类对应的商品数据 =======================================-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginLeft="@dimen/dp_20"
+        android:layout_marginTop="@dimen/dp_20" >
+
+        <com.cnpay.tigerbalm.view.list.AutoLoadRecyclerView
+            android:id="@+id/shopping_recycler_view_small"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <!-- 加载失败布局=======================-->
+        <LinearLayout
+            android:id="@+id/shopping_ll_nodata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_load_fail"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:text="数据加载失败..."
+                android:textSize="@dimen/default_text_25"/>
+
+            <Button
+                android:id="@+id/shopping_btn_reload"
+                android:layout_width="@dimen/dp_250"
+                android:layout_height="@dimen/dp_40"
+                android:layout_marginTop="@dimen/dp_30"
+                android:background="@drawable/shape_sell_detail"
+                android:text="重新加载"
+                android:textSize="@dimen/default_text_22"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <!-- 购物车-支付方式=====================================-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_25"
+        android:orientation="horizontal">
+
+        <!-- 购物车======-->
+        <RelativeLayout
+            android:id="@+id/shopping_rl_cart"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="2"
+            android:background="@mipmap/icon_rb_bg_n"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/shopping_iv_shop"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:src="@mipmap/icon_shopping_cart"/>
+
+            <TextView
+                android:id="@+id/shopping_tv_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="35dp"
+                android:layout_marginTop="43dp"
+                android:background="@mipmap/icon_add_news"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="invisible"/>
+
+            <TextView
+                android:id="@+id/shopping_tv_total_money"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="32sp"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_weight="4">
+
+            <!-- 微信支付=====-->
+            <LinearLayout
+                android:id="@+id/shopping_ll_weinxi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_05"
+                android:layout_weight="1"
+                android:background="@drawable/pay_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:src="@mipmap/icon_weixin"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信支付"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+
+            <!-- 支付宝支付-->
+            <LinearLayout
+                android:id="@+id/shopping_ll_zhifubao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_weight="1"
+                android:background="@drawable/pay_bg"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    android:src="@mipmap/icon_zhifubao"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="支付宝支付"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginBottom="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_05"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/shopping_ll_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:src="@mipmap/icon_back"/>
+
+            <TextView
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="返回上一页"
+                android:textSize="@dimen/default_text_28"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/shopping_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/red"
+            android:textSize="@dimen/default_text_35"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:visibility="invisible">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/icon_home"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_30"
+                android:text="首页"
+                android:textSize="18sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+</com.zhy.android.percent.support.PercentLinearLayout>

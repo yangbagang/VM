@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#829797"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/serial_tv_main"
+        android:layout_width="230dp"
+        android:layout_height="90dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="测试主机串口"
+        android:textSize="@dimen/default_text_25" />
+    <TextView
+        android:id="@+id/serial_tv_cabinet"
+        android:layout_width="230dp"
+        android:layout_height="90dp"
+        android:background="@color/colorPrimary"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="测试格子柜串口"
+        android:textSize="@dimen/default_text_25" />
+    <TextView
+        android:id="@+id/serial_tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="300dp"
+        android:background="@color/colorPrimary"
+        android:layout_margin="@dimen/dp_20"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:text="测试结果"
+        android:textSize="@dimen/default_text_25" />
+
+</LinearLayout>

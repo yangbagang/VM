@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+    <!-- 二维码图片=========================-->
+    <RelativeLayout
+        android:id="@+id/payWay_ll_bg"
+        android:layout_width="410dp"
+        android:layout_height="410dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/dp_20">
+
+        <ImageView
+            android:id="@+id/payWay_iv_code"
+            android:layout_width="390dp"
+            android:layout_height="390dp"
+            android:layout_centerInParent="true"/>
+
+        <!-- 卡支付提示的图片-->
+        <!--<ImageView-->
+            <!--android:id="@+id/payWay_iv_read"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_centerInParent="true"-->
+            <!--android:src="@mipmap/icon_read"-->
+            <!--android:visibility="gone"/>-->
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/payWay_tv_orderNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="订单号"
+        android:textSize="@dimen/dp_30"
+        android:visibility="gone"/>
+    <TextView
+        android:textColor="@color/white"
+        android:id="@+id/payWay_tv_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text=""
+        android:textSize="@dimen/dp_30"
+        android:visibility="visible"/>
+    <!-- 支付方式=================================-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginBottom="@dimen/dp_70"
+        android:layout_marginLeft="@dimen/dp_210"
+        android:layout_marginRight="@dimen/dp_210"
+        android:layout_marginTop="@dimen/dp_10"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/payWay_rg_pay_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/payWay_rb_weixin"
+                style="@style/zhifu_rb_style"
+                android:background="@drawable/radiobutton_zhifu_bg"
+                android:drawableTop="@mipmap/icon_weixin"
+                android:paddingBottom="@dimen/dp_30"
+                android:paddingTop="@dimen/dp_30"
+                android:text="微信支付"/>
+
+            <RadioButton
+                android:id="@+id/payWay_rb_zhifubao"
+                style="@style/zhifu_rb_style"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:background="@drawable/radiobutton_zhifu_bg"
+                android:drawableTop="@mipmap/icon_zhifubao"
+                android:paddingBottom="@dimen/dp_30"
+                android:paddingTop="@dimen/dp_30"
+                android:text="支付宝支付"/>
+
+            <!--<RadioButton-->
+                <!--android:id="@+id/payWay_rb_card"-->
+                <!--style="@style/zhifu_rb_style"-->
+                <!--android:layout_marginLeft="@dimen/dp_10"-->
+                <!--android:background="@drawable/radiobutton_zhifu_bg"-->
+                <!--android:drawableTop="@mipmap/icon_card"-->
+                <!--android:paddingBottom="@dimen/dp_30"-->
+                <!--android:paddingTop="@dimen/dp_30"-->
+                <!--android:text="园趣卡支付"/>-->
+
+        </RadioGroup>
+    </LinearLayout>
+</LinearLayout>

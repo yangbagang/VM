@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/testBtn_tv_layer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_65"
+        android:layout_margin="5dp"
+        android:background="@drawable/border_round_green_white"
+        android:gravity="center"
+        android:text="第一层测试"
+        android:textSize="@dimen/default_text_22"
+        android:textColor="@color/default_text_white"
+        />
+</LinearLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/keyboard_special_nom"/>
+    <item android:drawable="@mipmap/abc_delete"
+        android:bottom="@dimen/d_17"
+        android:top="@dimen/d_17"
+        android:left="@dimen/d_40"
+        android:right="@dimen/d_40"/>
+
+</layer-list>
