@@ -97,9 +97,11 @@ public class PushNoticeReceiver extends BroadcastReceiver {
                                 /** 推送登录*/
                                 Operator operatorIn = GsonUtils.createGson().fromJson(data, Operator.class);
                                 Operator yfOper = OPApplication.getInstance().getOper();
-                                if (operatorIn.getOperId().longValue() != yfOper.getOperId().longValue()) {
+                                if (operatorIn.getOperatorId().longValue() != yfOper.getOperatorId().longValue
+                                        ()) {
                                     log.info("登录用户不一致 -推送的用户：" + operatorIn.toString() + "----当前：" + yfOper.toString());
-                                    ToastUtil.showCenterToast(context, "请在'" + yfOper.getOperName() + "'的用户点击登录");
+                                    ToastUtil.showCenterToast(context, "请在'" + yfOper.getOperatorName() +
+                                            "'的用户点击登录");
                                     return;
                                 }
                                 DbUtils.getInstance().saveLog("登录");

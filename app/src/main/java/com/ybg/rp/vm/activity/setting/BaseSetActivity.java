@@ -557,15 +557,15 @@ public class BaseSetActivity extends BaseActivity implements View.OnClickListene
             ToastUtil.showToast(BaseSetActivity.this, "操作员错误，请重新登录");
             return;
         }
-        final long operId = operator.getOperId();
+        final long operId = operator.getOperatorId();
         final ArrayList<LayerBean> lvList = EntityDBUtil.getInstance().findAll(LayerBean.class);
-        Request<String> request = netWorkUtil.post("updFloorsTrackSet1");
+        Request<String> request = netWorkUtil.post("vendMachineInfo/updateLayerNo");
         // 添加请求参数
         request.add("machineId", appPreferences.getVMId());//机器ID
-        request.add("operId", operId);//轨道编号
+        request.add("operatorId", operId);//轨道编号
         String gsons = GsonUtils.toJsonProperties(lvList, "layerNo", "trackNum");
         TbLog.i("---上传的轨道信息:" + gsons);
-        request.add("gsons", gsons);
+        request.add("layers", gsons);
         netWorkUtil.add(BaseSetActivity.this, WHAT.VM_UPD_BASE_LEYAR, request, new YFHttpListener<String>() {
             @Override
             public void onSuccess(int what, Response<String> response) {
@@ -603,14 +603,14 @@ public class BaseSetActivity extends BaseActivity implements View.OnClickListene
             @Override
             protected Boolean doInBackground(String... params) {
                 try {
-                    Request<String> request = netWorkUtil.post("maxEmissionSet1");
+                    Request<String> request = netWorkUtil.post("vendMachineInfo/updateMaxNum");
                     for (int i = 0; i < lvList.size(); i++) {
                         LayerBean layerBean = lvList.get(i);
                         ArrayList<TrackBean> itemList = (ArrayList<TrackBean>) EntityDBUtil.getInstance().getDb().selector(TrackBean.class)
                                 .where("LAYER_NO", "=", layerBean.getLayerNo()).findAll();
                         // 添加请求参数
                         request.add("machineId", appPreferences.getVMId());//机器ID
-                        request.add("operId", operId);
+                        request.add("operatorId", operId);
 
                         request.add("layerNo", layerBean.getLayerNo());//当前层
 

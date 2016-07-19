@@ -446,7 +446,7 @@ public class ManageSetActivity extends BaseActivity implements View.OnClickListe
             @Override
             protected Boolean doInBackground(String... params) {
                 boolean ok = false;
-                Request<String> request = NoHttp.createStringRequest(Config.URL_COMM + "updFaultInfo", RequestMethod.POST);
+                Request<String> request = NoHttp.createStringRequest(Config.URL_COMM + "fixError", RequestMethod.POST);
                 if (null != selectList && selectList.size() > 0) {
                     TbLog.i("[selectList size=" + selectList.size() + "]");
                     EntityDBUtil dbUtil = EntityDBUtil.getInstance();

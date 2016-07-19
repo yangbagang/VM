@@ -149,9 +149,9 @@ public class InitActivity extends BaseActivity {
         public void onReceive(Context context, Intent intent) {
             String action = intent.getAction();
             if (ACTION.equals(action)) {
-                boolean isSuccess = intent.getExtras().getBoolean(IS_SUCCESS);
+                String isSuccess = intent.getExtras().getString(IS_SUCCESS);
                 String msg = intent.getExtras().getString(MSG);
-                if (isSuccess) {
+                if ("true".equals(isSuccess)) {
                     startAnima();
                 } else {
                     Toast.makeText(InitActivity.this, msg, Toast.LENGTH_SHORT).show();

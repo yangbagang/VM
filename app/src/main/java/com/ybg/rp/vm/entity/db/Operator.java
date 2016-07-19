@@ -15,29 +15,34 @@ import com.ybg.rp.vm.entity.PushBase;
  * @date 2016/4/14 0014
  */
 public class Operator extends PushBase {
+
     private static final long serialVersionUID = -8308480293219071976L;
     //操作员ID
-    private Long operId;
+    private Long operatorId;
     //操作员名称
-    private String operName;
-    public Long getOperId() {
-        return operId;
+    private String operatorName;
+
+    public Long getOperatorId() {
+        return operatorId;
     }
-    public void setOperId(Long operId) {
-        this.operId = operId;
+
+    public void setOperatorId(Long operatorId) {
+        this.operatorId = operatorId;
     }
-    public String getOperName() {
-        return operName;
+
+    public String getOperatorName() {
+        return operatorName;
     }
-    public void setOperName(String operName) {
-        this.operName = operName;
+
+    public void setOperatorName(String operatorName) {
+        this.operatorName = operatorName;
     }
 
     @Override
     public String toString() {
         return "Operator{" +
-                "operId=" + operId +
-                ", operName='" + operName + '\'' +
+                "operatorId=" + operatorId +
+                ", operatorName='" + operatorName + '\'' +
                 '}';
     }
 }

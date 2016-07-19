@@ -63,7 +63,7 @@ public class TtimingDataUpService extends IntentService {
                                 if (dataUpdate.getServiceUpd() == TranDataUpdate.UPD_FULT) {
                                     //服务器数据上传
                                     TranOnlineData data = db.selector(TranOnlineData.class).where("ORDER_NO", "=", dataUpdate.getOrderNo()).findFirst();
-                                    instance.sendSettleData(data, null, true);
+                                    instance.sendSettleData(data, null, true, 0);
                                 }
                             }
                         }

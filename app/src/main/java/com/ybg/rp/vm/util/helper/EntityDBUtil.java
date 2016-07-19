@@ -79,8 +79,8 @@ public class EntityDBUtil {
             logInfo.setContent(content);
             Operator operator = OPApplication.getInstance().getOper();
             if (null != operator) {
-                logInfo.setOperName(operator.getOperName());
-                logInfo.setOperId(operator.getOperId());
+                logInfo.setOperName(operator.getOperatorName());
+                logInfo.setOperId(operator.getOperatorId());
             }
             logInfo.setCreateDate(DateUtil.getCurrentDate(DateUtil.dateFormatYMDHMS));
             dbUtil.addObject(logInfo);

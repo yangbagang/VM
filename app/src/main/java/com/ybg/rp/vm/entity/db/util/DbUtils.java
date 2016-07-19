@@ -45,8 +45,8 @@ public class DbUtils extends BaseDBCommon {
             log.setCreateDate(DateUtil.getCurrentDate(DateUtil.dateFormatYMDHMS));
             Operator operator = OPApplication.getInstance().getOper();
             if (null != operator) {
-                log.setOperId(operator.getOperId());
-                log.setOperName(operator.getOperName());
+                log.setOperId(operator.getOperatorId());
+                log.setOperName(operator.getOperatorName());
             }
             getDb().save(log);
         } catch (Exception ex) {

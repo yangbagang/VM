@@ -29,11 +29,11 @@ android {
         versionCode 1
         versionName "1.0"
 
-        //个推推送配置
+        //个推推送配置VSu5GEYc2P7GnVfaWhhAq1
         manifestPlaceholders = [
-                GETUI_APP_ID    : "OEXALff5C3AroKRVWrd3P9",
-                GETUI_APP_KEY   : "Gai7NCeLXr9URULk4zsjE",
-                GETUI_APP_SECRET: "QKW5aw45bb5KRyXDaByrKA",
+                GETUI_APP_ID    : "4JCYuVTzz37viY08wQyu81",
+                GETUI_APP_KEY   : "dYYkFFqDmc9cAStDjaopc",
+                GETUI_APP_SECRET: "FdN8HjlrvH8oyCfIfODfp8",
                 PACKAGE_NAME    : applicationId
         ]
     }

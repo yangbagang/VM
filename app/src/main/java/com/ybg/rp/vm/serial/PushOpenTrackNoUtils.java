@@ -280,7 +280,7 @@ public class PushOpenTrackNoUtils {
         /**付款方式0：com.ybg.rp.vm，1：支付宝，2：微信支付 3 pp钱包**/
         data.setPayType(String.valueOf(orderInfo.getPayWay()));
         //上传交易结果
-        VMRequest.getInstance(context.getApplicationContext()).startSendSale(data, errorGoods);
+        VMRequest.getInstance(context.getApplicationContext()).startSendSale(data, errorGoods, 0);
     }
 
     /**

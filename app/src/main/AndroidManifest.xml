@@ -60,6 +60,7 @@
         <activity android:name=".activity.HomeActivity"/>
         <!--登录-->
         <activity android:name=".activity.login.LoginActivity" />
+        <activity android:name=".activity.login.ScanSuccessActivity" />
         <!--设置-->
         <activity android:name=".activity.setting.ManageSetActivity" />
         <activity android:name=".activity.setting.BaseSetActivity" />
