@@ -130,12 +130,6 @@ public class PushNoticeReceiver extends BroadcastReceiver {
                         }
                     }
                     break;
-               /* case PushConsts.GET_CLIENTID:
-                    // 获取ClientID(CID)
-                    // 第三方应用需要将CID上传到第三方服务器，并且将当前用户帐号和CID进行关联，以便日后通过用户帐号查找CID进行消息推送
-                    String cid = bundle.getString("clientid");
-                    TbLog.e("PushDemo 获取到CID:" + cid);
-                    break;*/
             }
         } catch (Exception ex) {
             ex.printStackTrace();

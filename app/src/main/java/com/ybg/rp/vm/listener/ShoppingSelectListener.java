@@ -50,10 +50,9 @@ import org.json.JSONObject;
 public class ShoppingSelectListener implements RadioGroup.OnCheckedChangeListener {
 
     /**
-     * 支付方式：默认 0：com.ybg.rp.vm，1：支付宝，2：微信支付
+     * 支付方式：默认 0：，1：支付宝，2：微信支付
      */
     public static String payType;
-    public static final String CARD = "0";
     public static final String AL = "1";
     public static final String WX = "2";
 
@@ -161,7 +160,7 @@ public class ShoppingSelectListener implements RadioGroup.OnCheckedChangeListene
         /** 将显示二维码的地方 - 设置未NULL*/
         iv_code.setImageBitmap(null);
 
-        Request<String> request = netWorkUtil.post("pingPay");
+        Request<String> request = netWorkUtil.post("orderInfo/createPingPlusCharge");
         // 添加请求参数
         String machineId = AppPreferences.getInstance().getVMId();
         String orderNo = good.getOrderNo();

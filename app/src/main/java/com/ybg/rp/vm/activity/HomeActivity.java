@@ -14,7 +14,6 @@ import com.cnpay.tigerbalm.utils.ToastUtil;
 import com.ybg.rp.vm.R;
 import com.ybg.rp.vm.activity.base.BaseActivity;
 import com.ybg.rp.vm.activity.login.LoginActivity;
-import com.ybg.rp.vm.activity.setting.ManageSetActivity;
 import com.ybg.rp.vm.activity.shopping.ShoppingActivity;
 import com.ybg.rp.vm.entity.db.TrackBean;
 import com.ybg.rp.vm.listener.NumInputChangedListener;

@@ -81,7 +81,7 @@ public class ShoppingActivity extends BaseActivity implements View.OnClickListen
     private ArrayList<GoodsInfo> cartDatas;             //购物车数据
 
     private NetWorkUtil util;
-    private int id;     //大类商品id
+    private Long id;     //大类商品id
 
     private BigGoodsAdapter bigGoodsAdapter;        //大类数据
     private GoodsAdapter goodsAdapter;      //小类数据adapter
@@ -319,7 +319,7 @@ public class ShoppingActivity extends BaseActivity implements View.OnClickListen
                         bigGoodsDatas.addAll(list);
                         bigGoodsAdapter.notifyDataSetChanged();
 
-                        //默认获取大类想对应的小类商品
+                        //默认获取大类相对应的小类商品
                         BigGoodsInfo bigGoodsInfo = bigGoodsDatas.get(0);
                         id = bigGoodsInfo.getId();
                         goodsAdapter.getSmallGoodsData(1, id);
@@ -350,10 +350,10 @@ public class ShoppingActivity extends BaseActivity implements View.OnClickListen
         if (cartDatas.size() > 0) {
             String jsonStr = GsonUtils.toJsonPropertiesDes(cartDatas, "gid", "num");
             TbLog.i("---Shopping/:" + jsonStr);
-            Request<String> makeOrder = util.post("makeOrder");
+            Request<String> makeOrder = util.post("orderInfo/createOrderWithMchineIdAndGoodsJson");
             makeOrder.add("goodsInfo", jsonStr);
             makeOrder.add("vid", AppPreferences.getInstance().getVMId());
-            //            支付方式：默认 0：com.ybg.rp.vm，1：支付宝，2：微信支付
+            //支付方式：默认 0：com.ybg.rp.vm，1：支付宝，2：微信支付
             YFDialogUtil.showLoadding(ShoppingActivity.this);
             util.add(ShoppingActivity.this, WHAT.VM_ORDER, makeOrder, new YFHttpListener<String>() {
                 @Override

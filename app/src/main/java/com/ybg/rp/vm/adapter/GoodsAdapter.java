@@ -62,7 +62,7 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.Myholder> {
 
 
     private int start = 1;
-    private int id;
+    private Long id;
 
     public GoodsAdapter(Activity mActivity, ArrayList<GoodsInfo> cartDatas, Handler mHandler
             , LoadFinishCallBack mLoadFinisCallBack, LinearLayout ll_no_data) {
@@ -93,8 +93,6 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.Myholder> {
         holder.tv_standard.setText(goodsInfo.getGoodsDesc());
 
         String goodsPic = goodsInfo.getGoodsPic();
-//        String goodsPic = "http://res.cloudinary.com/liuyuesha/image/fetch/http://himawari8-dl.nict.go.jp/himawari8/img/D531106/1d/550/2016/01/04/095000_0_0.png";
-
         Glide.with(mActivity)
                 .load(goodsPic)
                 .placeholder(R.mipmap.icon_default_pic)
@@ -142,15 +140,15 @@ public class GoodsAdapter extends RecyclerView.Adapter<GoodsAdapter.Myholder> {
      * @param currPage 页码
      * @param id       大类商品ID
      */
-    public void getSmallGoodsData(final int currPage, int id) {
+    public void getSmallGoodsData(final int currPage, Long id) {
         TbLog.e("请求分页  ---  currPage = " + currPage + "--- ID = " + id);
         //TbLog.i("----bid"+ id+"vid"+YFApplication.getInstance().initParams().getMachineId());
         this.start = currPage;
         this.id = id;
-        Request<String> request = util.post("queryVendGoodsInfo");
+        Request<String> request = util.post("vendLayerTrackGoods/queryGoodsByTypeOne");
         request.add("bid", id);         //大类id
         request.add("vid", AppPreferences.getInstance().getVMId());          //机器id
-        request.add("currPage", currPage);
+        request.add("pageNum", currPage);
         request.add("pageSize", 30);
         YFDialogUtil.showLoadding(mActivity);
         util.add(mActivity, WHAT.VM_GOODSINFO_DETAIL, request, new YFHttpListener<String>() {

@@ -46,7 +46,7 @@ public class BigGoodsAdapter extends RecyclerView.Adapter<BigGoodsAdapter.MyHold
          * 设置数据
          */
         BigGoodsInfo bigGoodsInfo = datas.get(position);
-        String name = bigGoodsInfo.getCategory();
+        String name = bigGoodsInfo.getName();
         holder.tv_name.setText(name);
 
         if(name.equals("香烟")) {

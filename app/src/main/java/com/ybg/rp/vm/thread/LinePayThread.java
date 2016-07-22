@@ -50,7 +50,7 @@ public class LinePayThread extends Thread {
     @Override
     public void run() {
         super.run();
-        Request<String> request = NetWorkUtil.getInstance().post("queryOrderInfo");
+        Request<String> request = NetWorkUtil.getInstance().post("orderInfo/queryOrderIsPay");
         TbLog.i("---" + orderInfo.toString());
         //是否打开柜门
         String isOpenTrack = OPApplication.getInstance().getIsOpenTrack(orderInfo.getOrderNo());
