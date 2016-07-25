@@ -350,9 +350,9 @@ public class ShoppingActivity extends BaseActivity implements View.OnClickListen
         if (cartDatas.size() > 0) {
             String jsonStr = GsonUtils.toJsonPropertiesDes(cartDatas, "gid", "num");
             TbLog.i("---Shopping/:" + jsonStr);
-            Request<String> makeOrder = util.post("orderInfo/createOrderWithMchineIdAndGoodsJson");
-            makeOrder.add("goodsInfo", jsonStr);
-            makeOrder.add("vid", AppPreferences.getInstance().getVMId());
+            Request<String> makeOrder = util.post("orderInfo/createOrderWithMachineIdAndGoodsJson");
+            makeOrder.add("goodsJson", jsonStr);
+            makeOrder.add("machineId", AppPreferences.getInstance().getVMId());
             //支付方式：默认 0：com.ybg.rp.vm，1：支付宝，2：微信支付
             YFDialogUtil.showLoadding(ShoppingActivity.this);
             util.add(ShoppingActivity.this, WHAT.VM_ORDER, makeOrder, new YFHttpListener<String>() {

@@ -18,7 +18,7 @@ public interface Config {
     /**
      * 通用网络请求 VEMManage/
      */
-    String URL_COMM = "http://192.168.12.101:8080/";   //测试
+    String URL_COMM = "http://192.168.12.100:8080/";   //测试
 
 //    String URL_COMM = "http://183.57.41.230/ua/";// 生产地址
 
