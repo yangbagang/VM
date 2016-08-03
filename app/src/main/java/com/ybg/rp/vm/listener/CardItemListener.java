@@ -65,9 +65,9 @@ public class CardItemListener implements View.OnClickListener {
 
         String jsonStr = GsonUtils.toJsonPropertiesDes(list, "gid", "num");
         TbLog.i("---Shopping/:" + jsonStr);
-        Request<String> makeOrder = util.post("makeOrder");
-        makeOrder.add("goodsInfo", jsonStr);
-        makeOrder.add("vid", AppPreferences.getInstance().getVMId());
+        Request<String> makeOrder = util.post("orderInfo/createOrderWithMachineIdAndGoodsJson");
+        makeOrder.add("goodsJson", jsonStr);
+        makeOrder.add("machineId", AppPreferences.getInstance().getVMId());
         //            支付方式：默认 0：com.ybg.rp.vm，1：支付宝，2：微信支付
         YFDialogUtil.showLoadding(mActivity);
         util.add(mActivity, WHAT.VM_ORDER, makeOrder, new YFHttpListener<String>() {

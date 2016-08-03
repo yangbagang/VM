@@ -249,7 +249,8 @@ public class ManageSetActivity extends BaseActivity implements View.OnClickListe
                     if (null != arrayList) {
                         double sum = 0.0;
                         for (int i = 0; i < arrayList.size(); i++) {
-                            sum = Arith.add(arrayList.get(i).getOrderPrice(), sum);
+                            sum += arrayList.get(i).getOrderPrice();
+                            TbLog.i("sum += " + arrayList.get(i).getOrderPrice());
                         }
                         currentDaySell = "￥ " + StrUtil.doubleFormat(sum);
                     }
@@ -446,7 +447,8 @@ public class ManageSetActivity extends BaseActivity implements View.OnClickListe
             @Override
             protected Boolean doInBackground(String... params) {
                 boolean ok = false;
-                Request<String> request = NoHttp.createStringRequest(Config.URL_COMM + "fixError", RequestMethod.POST);
+                Request<String> request = NoHttp.createStringRequest(Config.URL_COMM +
+                        "vendMachineInfo/fixError", RequestMethod.POST);
                 if (null != selectList && selectList.size() > 0) {
                     TbLog.i("[selectList size=" + selectList.size() + "]");
                     EntityDBUtil dbUtil = EntityDBUtil.getInstance();
